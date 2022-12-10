@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Poppins&display=swap');
+
+* {
+    box-sizing: border-box;
+    user-select: none;
+}
+
+html, body {
+    width: 100vw;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0; 
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
+    align-items: center;
+    font-family: Poppins;
+    background-color: #232936;
+}
+
+[flappy-game] {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    margin: 50px;
+    height: 640px;
+    width: 480px;
+    background-color: rgb(35, 177, 182);
+}
+
+.score {
+    position: absolute;
+    margin: 20px;
+    z-index: 1;
+    font-size: 40px;
+    font-family: "Press Start 2P";
+}
+
+.bird {
+    position: absolute;
+    align-self: center;
+    z-index: 2;
+    width: 50px;
+}
+
+.barrier-pair {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    width: 120px;
+}
+
+.barrier {
+    display: flex;
+    align-items: center;
+}
+
+.pipe {
+    height: calc(100% - 20px);
+    width: 85%;
+    background: linear-gradient(to right, #8bb747, #dcf582 20%, #528021 80%);
+    box-shadow: 0.5px 1px 10px 0px #272e1aad;
+}
+
+.border {
+    height: 20px;
+    width: 100%;
+    background: linear-gradient(to right, #8bb747 ,#dcf582 20%, #528021 80%);
+    box-shadow: 0.5px 1px 10px 0px #272e1aad;
+}
+
+.instructions {
+    position: fixed;
+    z-index: 3;
+    right: 0;
+    top: 40px;
+    width: 300px;
+    padding: 15px;
+    text-align: center;
+    background-color: #384155;
+}
+
+.instructions p {
+    color: #d5dbe7;
+}
+
+.instructions::before {
+    content: "?";
+    font-size: 30px;
+    padding: 0 15px;
+    border-radius: 100%;
+    background-color: #d5dbe7;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 60px;
+    width: 100%;
+    padding: 0px 20px;
+    font-weight: 600;
+    color: #e7edf8;
+    text-align: center;
+    background-color: #384155;
+}
+
+footer a:link {
+    color: #af8ae0;
+}
+
+footer a:visited {
+    color: #eeff00;
+}
+footer a:hover {
+    color: #eb8919;
+}
+footer a:active {
+    color: #eb8919;
+}
+
+footer strong {
+    color: #91d4d0;
+    text-decoration: none;
+    background: linear-gradient(to top, #eeff00 40%, #3a1866 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@media (max-width: 1112px) {
+    .instructions { visibility: hidden; }
+    .instructions:hover { animation: 1s fadeIn; visibility: visible; }
+    .instructions::before { visibility: visible; cursor: pointer; }
+}
+
+@media (max-width: 480px) {
+    body { overflow-x: hidden; }
+}
